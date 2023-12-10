@@ -11,9 +11,9 @@ import java.util.Objects;
 @Getter
 @ToString(callSuper = true)
 @Table(indexes = {
-        @Index(columnList = "content"),
+        @Index(columnList = "clickType"),
         @Index(columnList = "createdAt"),
-        @Index(columnList = "createdBy")
+        @Index(columnList = "modifiedAt")
 })
 @Entity
 public class ClickEvent extends AuditingFields  {
