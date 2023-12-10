@@ -10,19 +10,19 @@ import java.util.UUID;
  */
 public record ClientVisitorDto(
         Long id,
-        UUID uuid,
+        String uuid,
         int visitCount,
         LocalDateTime createdAt,
         LocalDateTime modifiedAt
 ) {
-    public static ClientVisitorDto of(Long id, UUID uuid, int visitCount, LocalDateTime createdAt, LocalDateTime modifiedAt){
+    public static ClientVisitorDto of(Long id, String uuid, int visitCount, LocalDateTime createdAt, LocalDateTime modifiedAt){
         return new ClientVisitorDto(id, uuid, visitCount, createdAt, modifiedAt);
     }
-    public static ClientVisitorDto of(UUID uuid){
+    public static ClientVisitorDto of(String uuid){
         return new ClientVisitorDto(null, uuid, 0, null, null);
     }
 
-    public static ClientVisitorDto of(UUID uuid, int visitCount){
+    public static ClientVisitorDto of(String uuid, int visitCount){
         return new ClientVisitorDto(null, uuid, visitCount, null, null);
     }
 

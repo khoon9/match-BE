@@ -5,11 +5,11 @@ import com.platform.match.dto.ClientVisitorDto;
 
 import java.util.UUID;
 
-public record ClientVisitorRequest(UUID uuid, int visitCount) {
-    public static ClientVisitorRequest of(UUID uuid){
+public record ClientVisitorRequest(String uuid, int visitCount) {
+    public static ClientVisitorRequest of(String uuid){
         return new ClientVisitorRequest(uuid, 0);
     }
-    public static ClientVisitorRequest of(UUID uuid, int visitCount){
+    public static ClientVisitorRequest of(String uuid, int visitCount){
         return new ClientVisitorRequest(uuid, visitCount);
     }
     public ClientVisitorDto toDto(){

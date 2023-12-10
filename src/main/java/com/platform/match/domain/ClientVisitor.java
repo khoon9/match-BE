@@ -24,7 +24,7 @@ public class ClientVisitor extends AuditingFields  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @Column(nullable = false) private UUID uuid;
+     @Setter @Column(nullable = false) private String uuid;
     @Setter int visitCount;
 
     @ToString.Exclude
@@ -34,12 +34,12 @@ public class ClientVisitor extends AuditingFields  {
 
     protected ClientVisitor() {};
 
-    private ClientVisitor(UUID uuid, int visitCount){
+    private ClientVisitor(String uuid, int visitCount){
         this.uuid = uuid;
         this.visitCount = visitCount;
     };
 
-    public static ClientVisitor of(UUID uuid, int visitCount){
+    public static ClientVisitor of(String uuid, int visitCount){
         return new ClientVisitor(uuid, visitCount);
     };
 

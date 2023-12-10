@@ -22,7 +22,7 @@ public class ClickEventService {
     private final ClickEventRepository clickEventRepository;
     private final ClientVisitorRepository clientVisitorRepository;
 
-    public String saveClickEvent(ClickType clickType, UUID uuid) {
+    public String saveClickEvent(ClickType clickType, String uuid) {
         try{
             clickEventRepository.save(ClickEvent.of(clientVisitorRepository.getReferenceByUuid(uuid), clickType));
             return "잡속 기록 성공";

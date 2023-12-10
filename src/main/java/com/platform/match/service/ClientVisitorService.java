@@ -23,7 +23,7 @@ public class ClientVisitorService {
         return "저장 성공";
     }
 
-    public String updateClientVisitor(UUID uuid){
+    public String updateClientVisitor(String uuid){
         try{
             ClientVisitor clientVisitor = clientVisitorRepository.getReferenceByUuid(uuid);
             clientVisitor.setVisitCount(clientVisitor.getVisitCount() + 1);
