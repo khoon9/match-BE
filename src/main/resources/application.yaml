@@ -2,7 +2,7 @@ debug: false
 
 logging:
   level:
-    com.community.platform: debug
+    com.platform.match: debug
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
 
