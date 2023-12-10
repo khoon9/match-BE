@@ -30,5 +30,4 @@ public class AuditingFields {
     @Column(nullable = false)
     private LocalDateTime modifiedAt; // 수정일시
 
-
 }

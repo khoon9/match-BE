@@ -6,16 +6,16 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 
 @Getter
 @ToString(callSuper = true)
 @Table(indexes = {
-        @Index(columnList = "title"),
-        @Index(columnList = "hashtag"),
+        @Index(columnList = "visitCount"),
         @Index(columnList = "createdAt"),
-        @Index(columnList = "updatedAt")
+        @Index(columnList = "modifiedAt")
 })
 @Entity
 public class ClientVisitor extends AuditingFields  {
@@ -32,4 +32,27 @@ public class ClientVisitor extends AuditingFields  {
     @OneToMany(mappedBy = "clientVisitor", cascade = CascadeType.ALL)
     private final Set<ClickEvent> clickEvents = new LinkedHashSet<>();
 
+    protected ClientVisitor() {};
+
+    private ClientVisitor(UUID uuid, int visitCount){
+        this.uuid = uuid;
+        this.visitCount = visitCount;
+    };
+
+    public static ClientVisitor of(UUID uuid, int visitCount){
+        return new ClientVisitor(uuid, visitCount);
+    };
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ClientVisitor clientVisitor)) return false;
+        return id != null && id.equals(clientVisitor.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

@@ -2,6 +2,7 @@ package com.platform.match.controller;
 
 
 import com.platform.match.domain.constant.ClickType;
+import com.platform.match.dto.request.ClientVisitorRequest;
 import com.platform.match.service.ClickEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +17,9 @@ public class ClickEventController {
 
     private final ClickEventService clickEventService;
 
-    @PostMapping("/access/{click_type}")
-    public ResponseEntity<String> saveClickEvent(@PathVariable ClickType click_type, @RequestBody UUID uuid){
-        return ResponseEntity.ok("클릭 이벤트 생성");
+    @PostMapping("/visit/access")
+    public ResponseEntity<String> postNewClickEvent(@RequestParam ClickType clickType, @RequestBody ClientVisitorRequest clientVisitorRequest){
+        return ResponseEntity.ok(clickEventService.saveClickEvent(clickType, clientVisitorRequest.uuid()));
     }
+
 }
