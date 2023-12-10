@@ -18,6 +18,9 @@ public record ClientVisitorDto(
     public static ClientVisitorDto of(Long id, UUID uuid, int visitCount, LocalDateTime createdAt, LocalDateTime modifiedAt){
         return new ClientVisitorDto(id, uuid, visitCount, createdAt, modifiedAt);
     }
+    public static ClientVisitorDto of(UUID uuid){
+        return new ClientVisitorDto(null, uuid, 0, null, null);
+    }
 
     public static ClientVisitorDto of(UUID uuid, int visitCount){
         return new ClientVisitorDto(null, uuid, visitCount, null, null);
