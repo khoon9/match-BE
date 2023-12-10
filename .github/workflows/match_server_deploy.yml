@@ -1,4 +1,4 @@
-name: deploy
+name: match server deploy
 run-name: Running
 on:
   push:
