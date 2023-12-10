@@ -8,7 +8,7 @@ on:
 env:
   AWS_REGION: ap-northeast-2
   AWS_S3_BUCKET: match-bucket-for-deploy
-  AWS_S3_BUCKET_DIR: match-client-deploy
+  AWS_S3_BUCKET_DIR: match-server-deploy
   AWS_CODE_DEPLOY_APPLICATION: match-application
   AWS_CODE_DEPLOY_GROUP: match-server-group
 
