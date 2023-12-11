@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /home/ubuntu/.bashrc
+
 ROOT_PATH="/home/ubuntu/match-server"
 JAR="$ROOT_PATH/application.jar"
 
