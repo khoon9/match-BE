@@ -13,10 +13,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Value("${cors.allowed-origin}")
     private String allowedOrigin;
 
+    @Value("${cors.allowed-origin-two}")
+    private String allowedOriginTwo;
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins(allowedOrigin)
+                .allowedOrigins(allowedOrigin, allowedOriginTwo)
                 .allowedMethods("OPTIONS","GET","POST","PUT","DELETE");
     }
 

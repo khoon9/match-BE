@@ -24,3 +24,4 @@ spring:
 
 cors:
   allowed-origin: ${ALLOWED_ORIGIN}
+  allowed-origin-two: ${ALLOWED_ORIGIN_TWO}
