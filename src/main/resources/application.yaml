@@ -21,3 +21,6 @@ spring:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 1000
   sql.init.mode: always
+
+cors:
+  allowed-origin: ${ALLOWED_ORIGIN}
