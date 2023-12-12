@@ -29,9 +29,6 @@ jobs:
         run: chmod +x ./gradlew
       - name: 프로젝트 빌드
         run: ./gradlew clean build -x test
-        env:
-          DB_USERNAME: ${{ secrets.DB_USERNAME }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       - name: AWS credential 설정
         uses: aws-actions/configure-aws-credentials@v1
         with:
