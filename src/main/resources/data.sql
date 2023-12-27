@@ -1,2 +1,0 @@
-insert into client_visitor (`visit_count`,`uuid`,`created_at`,`modified_at`) values (0,'e392f4db-583b-48c7-902b-e68980c62a7d',now(), now());
-insert into click_event (`client_visitor_id`,`click_type`,`created_at`,`modified_at`) values (1,'APPLICATION',now(), now());
